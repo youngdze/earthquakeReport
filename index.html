@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="X-UA-COMPATIBLE" content="IE=edge, chrome=1">
+        <meta name="author" content="youngdze">
+        <meta name="description" content="Latest Earthquake Report">
+        <meta name="kerywords" content="earthquake angular">
+        <base target="_blank">
+        <link rel="icon" type="image/png" href="earthquake.png">
+        <link rel="stylesheet" href="framework/bootstrap-3.2.0/css/bootstrap.min.css?ver=3.2.0">
+        <link rel="stylesheet" href="styles/main.css">
+		<title>Latest Earthquake Report</title>
+        <!--[if lt IE 9]>
+        <script src="bower_components/html5shiv/dist/html5shiv.js?ver=3.7.2"></script>
+        <script src="bower_components/responsejs/response.js?ver=0.9.0"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="page-header" ng-controller="TimeCtrl">
+                <h1>
+                    Latest Earthquake Report
+                    <small>
+                        created by
+                        <a href="http://blog.youngdze.com">youngdze</a> |
+                        {{time | date: 'HH:mm:ss'}}
+                    </small>
+                </h1>
+            </div>
+            <div ng-view></div>
+        </div>
+
+        <script src="framework/angularjs-1.3/angular.min.js?ver=1.3.0"></script>
+        <script src="framework/angular-route-1.3/angular-route.min.js?ver=1.3"></script>
+        <script src="framework/angular-resource-1.3/angular-resource.min.js?ver=1.3"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/filters/myFilters.js"></script>
+        <script src="scripts/services/myServices.js"></script>
+    </body>
+</html>

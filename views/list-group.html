@@ -1,0 +1,22 @@
+<div class="list-group">
+    <div class="loading" ng-show="loading">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    <a ng-repeat="place in places | limitTo:20" ng-href="{{place.properties.url}}" class="list-group-item" ng-class="{ 'list-group-item-danger': {{place.properties.mag | danger}}, 'list-group-item-warning': {{place.properties.mag | warning}}, 'list-group-item-success': {{place.properties.mag | safe}} }">
+        {{place.properties.title}}
+        <span class="badge hidden-xs">{{place.properties.time | date: 'yyyy-MM-dd HH:mm:ss Z'}}</span>
+    </a>
+    <div class="text-center" ng-show="loadSuccess">
+        <ul class="pagination">
+            <li><a href="">&laquo;</a></li>
+            <li class="active"><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">&raquo;</a></li>
+        </ul>
+    </div>
+</div>
