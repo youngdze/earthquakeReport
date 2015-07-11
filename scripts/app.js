@@ -5,7 +5,8 @@ var app = angular.module('app', [
     'ngResource',
     'quakeAppControllers',
     'quakeAppServices',
-    'quakeAppFilters'
+    'quakeAppFilters',
+    'quakeAppDirectives'
 ]);
 
 app.config(['$routeProvider',
@@ -18,3 +19,4 @@ app.config(['$routeProvider',
         });
     }
 ]);
+

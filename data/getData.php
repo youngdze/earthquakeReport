@@ -7,6 +7,7 @@ if (!isset($_GET['target']) || empty($_GET['target'])) {
 
 $target = htmlspecialchars($_GET['target']);
 $data = file_get_contents($target);
+#$data = file_get_contents('data.json');
 echo $data;
 
 ?>

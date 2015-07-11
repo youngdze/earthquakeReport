@@ -18,19 +18,33 @@ quakeAppControllers.controller('LoadDataCtrl', ['$scope', '$timeout', '$log', 'P
         $scope.loading = true;
         $scope.loadSuccess = false;
 
+        $scope.pageSize = 10;
+        $scope.showMore = function () {
+            $scope.pageSize += 10;
+        };
+
+
         var updateData = function() {
             Place.loadList()
                 .success(function(data, status, headers, config) {
 //                    $log.log('load data successfully!');
+
                     $scope.places = data.features;
+
                     $scope.loadSuccess = true;
                     $scope.loading = false;
+                    $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+                        var $ = jQuery;
+                        $('.collapsible').collapsible({
+                            accordion : false
+                        });
+                    });
                     $timeout(function() {
                         $scope.loading = true;
                         updateData();
-                    }, 30000);
+                    }, 1 * 60 * 1000);
                 }).error(function() {
-                    $log.error('load data failed, will reload in 10 seconds');
+                    $log.error('load data failed, reloading.');
                     Place.loadList();
                 });
         }

@@ -4,9 +4,10 @@ var quakeAppServices = angular.module('quakeAppServices', []);
 
 quakeAppServices.factory('Place', ['$http',
     function ($http) {
+        var targetUrl = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson';
+        targetUrl = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
         return {
             loadList: function () {
-                var targetUrl = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
                 return $http({
                     method: 'GET',
                     url: 'data/getData.php',
@@ -16,7 +17,7 @@ quakeAppServices.factory('Place', ['$http',
                 });
             },
             loadDetail: function () {
-                return $resource('data/getData.php');
+                return $resource(targetUrl);
             }
         };
     }
