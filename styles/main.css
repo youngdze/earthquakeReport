@@ -42,3 +42,22 @@
     -webkit-transform: scale(1.0);
   }
 }
+
+body {
+    background-color: #fcfcfc;
+}
+
+.list-title {
+    text-overflow: ellipsis;
+}
+
+
+@media only screen and (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 0 .8rem;
+    }
+    .list-happened-time {
+        display: none;
+    }
+}

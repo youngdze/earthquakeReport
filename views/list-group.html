@@ -12,12 +12,12 @@
         <ul class="collapsible popout" data-collapsible="accordion">
             <li ng-repeat="place in places | limitTo:pageSize | filter:searchPlace"
                 on-finish-render="ngRepeatFinished">
-                <div class="collapsible-header"
+                <div class="collapsible-header list-title"
                      ng-class="{
                         'pink lighten-5': {{ place.properties.mag | danger }},
                         'lime lighten-5': {{ place.properties.mag | warning }},
                         'green lighten-5': {{ place.properties.mag | safe}},
-                     }">{{ place.properties.title }}<span class="badge">{{ place.properties.time | date: 'HH:mm:ss' }}</span></div>
+                     }">{{ place.properties.title }}<span class="badge list-happened-time">{{ place.properties.time | date: 'HH:mm:ss' }}</span></div>
                 <div class="collapsible-body">
                     <p>
                         <b>Place:</b> {{ place.properties.place }}<br>
@@ -34,7 +34,7 @@
             </li>
         </ul>
     </div>
-    <div class="col offset-s5 s2 center">
+    <div class="col offset-s4 s4 center">
         <button class="btn-large waves-effect" style="width: 100%;" ng-show="loadSuccess" ng-click="showMore()">More</button>
     </div>
 </div>
