@@ -52,16 +52,3 @@ quakeAppControllers.controller('LoadDataCtrl', ['$scope', '$timeout', '$log', 'P
         updateData();
     }
 ]);
-
-// quakeAppControllers.controller('LoadDataCtrl', ['$scope', '$log', 'PlaceNew',
-//     function ($scope, $log, PlaceNew) {
-//         $scope.loading = true;
-//         $scope.loadSuccess = false;
-
-//         PlaceNew.get({}, function (place) {
-//             $scope.places = place.features;
-//             $scope.loadSuccess = true;
-//             $scope.loading = false;
-//         });
-//     }
-// ]);
